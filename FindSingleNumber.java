@@ -2,6 +2,7 @@
 
 class Solution {
     public int singleNumber(int[] nums) {
+        /* A harder solution
         HashMap<Integer,Integer> countingNumbers = new HashMap<Integer,Integer>(nums.length);
         
         for (int i=0; i < nums.length; i++) {
@@ -19,7 +20,24 @@ class Solution {
                 number = set.getKey();
             }
         }
+        */
+
+        //A little bit easier
+        Arrays.sort(nums);
+        int answer = 0;
+        if(nums.length = 1) answer = nums[0];
+        else{
+            for(int i=0;i<nums.length-1;i=i+2){
+                if(nums[i]!=nums[i+1]){
+                    ans = nums[i];
+                    break;
+                }
+                else{
+                    ans = nums[nums.length-1];
+                }
+            }
+        }
         
-        return number;
+        return answer;
     }
 }
